@@ -19,7 +19,8 @@ Until the real login exists, open `/pages/dev/sesion-demo.html` and choose Custo
 | `css/tokens.css` | Colors, fonts, spacing. **The only place with hex colors.** | Juan |
 | `css/base.css`, `css/components.css` | Reset, layout and shared components | Juan |
 | `js/config.js` | URL of each microservice (8081–8084) | Juan |
-| `js/api.js` | `api.get/post/put/patch/delete(service, path, body)`, adds the JWT and reads ProblemDetail errors | Juan |
+| `js/api.js` | `api.get/post/put/patch/delete(service, path, body)`: adds the JWT, returns the `data` of the `ApiResponse` wrapper and throws `ApiError` (`status`, `code`, `message`, `details`) on failure (ADR-007) | Juan |
+| `js/auth.js` | `login(email, password)` saves the session; `register({ name, email, password, role })`; `homeFor(user)` | Juan · used by Sebastián |
 | `js/session.js` | Token, current user, `requireRole()`, `logout()` | Juan |
 | `js/navbar.js`, `js/breadcrumb.js` | Navbar (same on every page of a role) and breadcrumb | Juan |
 | `js/cart.js` | Cart in `localStorage` (`distrilink.cart`), one distributor per order | Juan · used by Alfredo and Jhojan |
